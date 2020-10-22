@@ -20,8 +20,8 @@ let numWrong = 0;
 //
 const createDivsForChars = (word) => {
   for (const letter of word) {
-    $('#word-container').append(`<div class="letter-box ${letter}"></div>`);
-    console.log(letter);
+    $('#word-container').append(`<div class="letter-box-${letter}"></div>`);
+    console.log(`letter-box ${letter}`);
   }
 };
 
@@ -45,8 +45,8 @@ const disableLetterButton = (buttonEl) => {
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  // const letterDiv = $(`.letter-box ${letter}`);
-  // console.log(letterDiv[0]);
+  const letterDiv = $(`div.letter-box-${letter}`);
+  console.log(letterDiv[0]);
   // if (letterDiv[0]) {
   //   console.log(`true! ${letterDiv[0]}`);
   //   return true;

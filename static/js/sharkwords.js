@@ -44,8 +44,6 @@ const disableLetterButton = (buttonEl) => {
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  // const letterDiv = $(`div.${letter}`);
-  // return (letterDiv[0] !== undefined);
 
   return ($(`div.${letter}`)[0] !== undefined);
 };
@@ -62,8 +60,11 @@ const handleCorrectGuess = (letter) => {
 // message. Otherwise, increment `numWrong` and update the shark image.
 //
 const handleWrongGuess = () => {
-  console.log("wrong guess!");
-  // console.log($('img').attr('src'));
+  
+  numWrong += 1;
+  
+  $('img').attr('src', `/static/images/guess${numWrong}.png`)
+  console.log($('img').attr('src'));
   // img src="/static/images/guess0.png"
 };
 

@@ -61,11 +61,14 @@ const handleCorrectGuess = (letter) => {
 //
 const handleWrongGuess = () => {
   
-  numWrong += 1;
-  
-  $('img').attr('src', `/static/images/guess${numWrong}.png`)
-  console.log($('img').attr('src'));
-  // img src="/static/images/guess0.png"
+
+    numWrong += 1;
+    $('img').attr('src', `/static/images/guess${numWrong}.png`);
+
+    if (numWrong === 5) {
+      $('button').attr('disabled',true);
+      
+      }
 };
 
 //  Reset game state. Called before restarting the game.

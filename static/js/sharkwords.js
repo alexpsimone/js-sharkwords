@@ -47,6 +47,9 @@ const disableLetterButton = (buttonEl) => {
 const isLetterInWord = (letter) => {
   const letterDiv = $(`div.letter-box-${letter}`);
   console.log(letterDiv[0]);
+  if (letterDiv !== undefined) {
+    return true;
+  }
   // if (letterDiv[0]) {
   //   console.log(`true! ${letterDiv[0]}`);
   //   return true;

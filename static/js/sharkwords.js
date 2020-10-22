@@ -67,7 +67,7 @@ const handleWrongGuess = () => {
 
     if (numWrong === 5) {
       $('button').attr('disabled',true);
-      
+      $('#play-again').show();
       }
 };
 

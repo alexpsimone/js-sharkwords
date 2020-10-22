@@ -44,10 +44,10 @@ const disableLetterButton = (buttonEl) => {
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  const letterDiv = $(`div.${letter}`);
-  if (letterDiv !== undefined) {
-    return true;
-  }
+  // const letterDiv = $(`div.${letter}`);
+  // return (letterDiv[0] !== undefined);
+
+  return ($(`div.${letter}`)[0] !== undefined);
 };
 
 // Called when `letter` is in word. Update contents of divs with `letter`.
@@ -62,7 +62,9 @@ const handleCorrectGuess = (letter) => {
 // message. Otherwise, increment `numWrong` and update the shark image.
 //
 const handleWrongGuess = () => {
-  // Replace this with your code
+  console.log("wrong guess!");
+  // console.log($('img').attr('src'));
+  // img src="/static/images/guess0.png"
 };
 
 //  Reset game state. Called before restarting the game.
@@ -89,7 +91,8 @@ const resetGame = () => {
     if (isLetterInWord(letter)) {
       handleCorrectGuess(letter);
     } else {
-      handleWrongGuess(letter);
+      // handleWrongGuess(letter);
+      handleWrongGuess();
     }
   });
 

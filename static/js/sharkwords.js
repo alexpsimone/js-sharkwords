@@ -16,6 +16,8 @@ const WORDS = [
 
 let numWrong = 0;
 
+
+
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
@@ -81,8 +83,15 @@ const resetGame = () => {
 //
 (function startGame() {
   // For now, we'll hardcode the word that the user has to guess.
-  const word = 'hello';
 
+  
+  // Use Math.random() to select an integer value
+  // between 0 and length(WORDS). The word at the index
+  // matching this integer value will be our word for
+  // the game.
+
+  const word = WORDS[Math.floor(Math.random() * WORDS.length)];
+  
   createDivsForChars(word);
   generateLetterButtons();
 

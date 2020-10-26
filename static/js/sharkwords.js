@@ -32,19 +32,23 @@ const generateLetterButtons = () => {
   }
 };
 
+// const generateLetterButtons = () => {
+//   for (const char of ALPHABET) {
+//     $('#letter-buttons').append(`<button class="${char}">${char}</button>`);
+//   }
+// };
+
 // Set the `disabled` property of `buttonEl` to `true.
 //
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  const clickedButton = $(buttonEl);
-  clickedButton.attr('disabled', true);
+  $(buttonEl).attr('disabled', true);
 };
 
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-
   return ($(`div.${letter}`)[0] !== undefined);
 };
 

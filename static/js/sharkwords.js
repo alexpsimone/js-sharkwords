@@ -67,7 +67,7 @@ const handleWrongGuess = () => {
 
     if (numWrong === 5) {
       $('button').attr('disabled',true);
-      $('#play-again').show();
+      $('#play-again-lose').show();
       }
 };
 
@@ -102,7 +102,9 @@ const resetGame = () => {
     if (isLetterInWord(letter)) {
       handleCorrectGuess(letter);
       lettersInWord.delete(letter);
-      console.log(lettersInWord);
+      if (lettersInWord.size === 0) {
+        $('#play-again-win').show();
+      }
     } else {
       handleWrongGuess();
     }

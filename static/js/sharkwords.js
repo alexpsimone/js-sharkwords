@@ -32,14 +32,7 @@ const generateLetterButtons = () => {
   }
 };
 
-// const generateLetterButtons = () => {
-//   for (const char of ALPHABET) {
-//     $('#letter-buttons').append(`<button class="${char}">${char}</button>`);
-//   }
-// };
-
 // Set the `disabled` property of `buttonEl` to `true.
-//
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
@@ -59,7 +52,6 @@ const handleCorrectGuess = (letter) => {
 };
 
 // Called when `letter` is not in word.
-//
 // If the shark gets the person, disable all buttons and show the "play again"
 // message. Otherwise, increment `numWrong` and update the shark image.
 //
@@ -88,9 +80,11 @@ const resetGame = () => {
   // between 0 and length(WORDS). The word at the index
   // matching this integer value will be our word for
   // the game.
+  //
   const word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
   // When this set is empty, the user has won.
+  //
   const lettersInWord = new Set(word);    
 
   createDivsForChars(word);

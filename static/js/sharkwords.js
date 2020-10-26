@@ -65,7 +65,6 @@ const handleCorrectGuess = (letter) => {
 //
 const handleWrongGuess = () => {
   
-
     numWrong += 1;
     $('img').attr('src', `/static/images/guess${numWrong}.png`);
 
@@ -91,8 +90,8 @@ const resetGame = () => {
   // the game.
   const word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-  const lettersInWord = new Set(word);
-  console.log(lettersInWord);
+  // When this set is empty, the user has won.
+  const lettersInWord = new Set(word);    
 
   createDivsForChars(word);
   generateLetterButtons();
@@ -122,7 +121,3 @@ const resetGame = () => {
   });
 
 } ());
-
-// when word is selected, create a set of all letters in word
-// if correct letter is guessed, remove letter from the set
-// if set is empty, then activate win anchor tag

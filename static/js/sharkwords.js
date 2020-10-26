@@ -16,8 +16,6 @@ const WORDS = [
 
 let numWrong = 0;
 
-
-
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
@@ -82,16 +80,16 @@ const resetGame = () => {
 // This is like if __name__ == '__main__' in Python
 //
 (function startGame() {
-  // For now, we'll hardcode the word that the user has to guess.
-
   
   // Use Math.random() to select an integer value
   // between 0 and length(WORDS). The word at the index
   // matching this integer value will be our word for
   // the game.
-
   const word = WORDS[Math.floor(Math.random() * WORDS.length)];
-  
+
+  const lettersInWord = new Set(word);
+  console.log(lettersInWord);
+
   createDivsForChars(word);
   generateLetterButtons();
 
@@ -103,8 +101,9 @@ const resetGame = () => {
 
     if (isLetterInWord(letter)) {
       handleCorrectGuess(letter);
+      lettersInWord.delete(letter);
+      console.log(lettersInWord);
     } else {
-      // handleWrongGuess(letter);
       handleWrongGuess();
     }
   });
@@ -114,4 +113,10 @@ const resetGame = () => {
   });
   $('#play-again-win').on('click', () => {
     resetGame(startGame);
-})();
+  });
+
+} ());
+
+// when word is selected, create a set of all letters in word
+// if correct letter is guessed, remove letter from the set
+// if set is empty, then activate win anchor tag

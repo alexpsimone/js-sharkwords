@@ -109,7 +109,9 @@ const resetGame = () => {
     }
   });
 
-  $('#play-again').on('click', () => {
+  $('#play-again-lose').on('click', () => {
     resetGame();
   });
+  $('#play-again-win').on('click', () => {
+    resetGame(startGame);
 })();
